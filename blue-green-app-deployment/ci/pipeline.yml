@@ -11,7 +11,7 @@ resources:
   type: git
   source:
     branch: master
-    uri: https://github.com/pivotalservices/concourse-pipeline-samples.git
+    uri: https://github.com/xudegui/concourse-pipeline-samples.git
 - name: PWS
   type: cf
   source:
@@ -29,8 +29,6 @@ jobs:
   plan:
   - get: concourse-pipeline-samples
     trigger: true
-  - task: run-unit-tests
-    file: concourse-pipeline-samples/blue-green-app-deployment/ci/tasks/unit-tests.yml
 
 - name: deploy-app
   serial: true
